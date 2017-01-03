@@ -38,7 +38,7 @@ namespace FavoriteColorProcessor
         //Could definitely have more error handling around this
         private static string GetPath()
         {
-            Console.WriteLine("Input path of file to process names: \n");
+            Console.WriteLine("Input path of file to process names:");
             return Console.ReadLine();
         }
 
@@ -48,7 +48,7 @@ namespace FavoriteColorProcessor
             var store = new PersonDataStore();
             var personFactory = new PersonFactory();
             store.AddPeople(results);
-            Console.WriteLine($"Input sort either {GenderSort}, {DateOfBirthSort}, or {LastNameSort}. gender is females before males, birthDate is ascending, and lastName is descending: \n");
+            Console.WriteLine($"\nInput sort either {GenderSort}, {DateOfBirthSort}, or {LastNameSort}. gender is females before males, birthDate is ascending, and lastName is descending:");
             var sort = Console.ReadLine().ToLower();
             List<Person> sorted;
             if (sort == GenderSort)
