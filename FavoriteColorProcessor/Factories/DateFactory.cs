@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace FavoriteColorProcessor.Factories
 {
-    public class DateFactory
+    public class DateFactory : IDateFactory
     {
 
         private const string DateFormat = "M/d/yyyy";
@@ -15,7 +15,7 @@ namespace FavoriteColorProcessor.Factories
         /// </summary>
         /// <param name="dateString">input string. Expected to be formatted as mm/dd/yyyy</param>
         /// <returns>DateTimeObject</returns>
-        public virtual DateTime GetDate(string dateString)
+        public DateTime GetDate(string dateString)
         {
             try
             {
@@ -29,7 +29,7 @@ namespace FavoriteColorProcessor.Factories
             }
         }
 
-        public virtual string GetString(DateTime date)
+        public string GetString(DateTime date)
         {
             return date.ToString(DateFormat);
         }

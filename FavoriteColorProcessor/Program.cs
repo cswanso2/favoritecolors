@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FavoriteColorProcessor.Factories;
 
 namespace FavoriteColorProcessor
 {
@@ -54,7 +55,7 @@ namespace FavoriteColorProcessor
             foreach(var person in sorted)
             {
 
-                Console.WriteLine($"{person.LastName},{}")
+                Console.WriteLine(personFactory.CreateString(person));
             }
         }
     }

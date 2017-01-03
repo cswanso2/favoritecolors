@@ -58,18 +58,18 @@ namespace FavoriteColorProcessor.Stores
             FlushCaches();
         }
 
-        private void InitializeSortedCache(List<Person> cache, Comparison<Person> comparision)
+        private void InitializeSortedCache(ref List<Person> cache, Comparison<Person> comparison)
         {
             cache = _store.ToList(); //create copy of references so it can be sorted in different ways
-            cache.Sort(comparision);
+            cache.Sort(comparison);
         }
 
         public List<Person> RetrieveDateSorted()
         {
             if (_dateOfBirthSorted == null)
             {
-                InitializeSortedCache(_dateOfBirthSorted,
-                    new Comparison<Person>((x, y) => (DateTime.Compare(x.DateOfBirth, y.DateOfBirth))));
+                InitializeSortedCache(ref _dateOfBirthSorted,
+                    (x, y) => (-1 * DateTime.Compare(x.DateOfBirth, y.DateOfBirth)));
             }
             return _dateOfBirthSorted;
         }
@@ -78,11 +78,11 @@ namespace FavoriteColorProcessor.Stores
         {
             if (_genderLastNameSorted == null)
             {
-                InitializeSortedCache(_genderLastNameSorted, new Comparison<Person>((x, y) => (
-                x.Gender == y.Gender ? 
-                -1 * String.CompareOrdinal(x.LastName, y.LastName)
-                : String.CompareOrdinal(x.Gender, y.Gender)
-                )));
+                InitializeSortedCache(ref _genderLastNameSorted, (x, y) => (
+                    x.Gender == y.Gender ? 
+                        string.CompareOrdinal(x.LastName, y.LastName)
+                        : string.CompareOrdinal(x.Gender, y.Gender)
+                    ));
             }
             return _genderLastNameSorted;
         }
@@ -91,8 +91,8 @@ namespace FavoriteColorProcessor.Stores
         {
             if(_lastNameSorted == null)
             {
-                InitializeSortedCache(_lastNameSorted, new Comparison<Person>((x, y) => (
-                -1 * String.CompareOrdinal(x.LastName, y.LastName))));
+                InitializeSortedCache(ref _lastNameSorted, (x, y) => (
+                    -1 * string.CompareOrdinal(x.LastName, y.LastName)));
             }
             return _lastNameSorted;
         }

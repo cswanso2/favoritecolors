@@ -15,14 +15,14 @@ namespace UnitTests.Factories
         private const int Month = 12;
         private const int Year = 1995;
 
-        private Mock<DateFactory> _mockDateFactory;
+        private Mock<IDateFactory> _mockDateFactory;
         private PersonFactory _personFactory;
 
 
         [SetUp]
         public void SetUp()
         {
-            _mockDateFactory = new Mock<DateFactory>();
+            _mockDateFactory = new Mock<IDateFactory>();
             _mockDateFactory.Setup(x => x.GetDate(It.IsAny<string>())).Returns(new DateTime(Year, Month, Day));
             _personFactory = new PersonFactory(_mockDateFactory.Object);
         }

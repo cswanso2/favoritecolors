@@ -16,11 +16,11 @@ namespace FavoriteColorProcessor.Parser
         private const string SpaceDelimiter = " ";
         private const string PipeDelimiter = " | ";
 
-        private readonly PersonFactory _personFactory;
+        private readonly IPersonFactory _personFactory;
 
         public FavoriteColorFileParser()
         {
-            _personFactory = new PersonFactory(new DateFactory());    
+            _personFactory = new PersonFactory();    
         }
 
         /// <summary>

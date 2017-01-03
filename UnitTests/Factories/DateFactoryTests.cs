@@ -55,14 +55,5 @@ namespace UnitTests.Factories
             Assert.Throws<InvalidDataException>(() => _dateFactory.GetDate(dateString));
         }
 
-        [Test]
-        [TestCase(12, 33, 1992)]
-        [TestCase(10, 1, 10000)]
-
-        public void ConvertsDateToString(int month, int day, int year)
-        {
-            var date = new DateTime(year, month, day);
-            Assert.Throws<InvalidDataException>(() => _dateFactory.GetString(date));
-        }
     }
 }

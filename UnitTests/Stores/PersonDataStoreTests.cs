@@ -11,7 +11,7 @@ namespace UnitTests.Stores
 {
     public class PersonDataStoreTests
     {
-        private readonly Person MalePersonYoungestA = new Person()
+        private readonly Person _malePersonYoungestA = new Person()
         {
             LastName = "a",
             FirstName = "a",
@@ -19,7 +19,7 @@ namespace UnitTests.Stores
             FavoriteColor = "a",
             Gender = "Male"
         };
-        private readonly Person FemalePersonYoungerB = new Person()
+        private readonly Person _femalePersonYoungerB = new Person()
         {
             LastName = "b",
             FirstName = "b",
@@ -28,7 +28,7 @@ namespace UnitTests.Stores
             Gender = "Female"
         };
 
-        private readonly Person FemalePersonYoungC = new Person()
+        private readonly Person _femalePersonYoungC = new Person()
         {
             LastName = "c",
             FirstName = "c",
@@ -37,76 +37,82 @@ namespace UnitTests.Stores
             Gender = "Female"
         };
 
-        private readonly PersonDataStore _store = new PersonDataStore();
+        private PersonDataStore _store;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _store = new PersonDataStore();
+        }
 
         [Test]
-        private void TestAdd()
+        public void TestAdd()
         {
             _store.AddPeople(new List<Person>
             {
-                MalePersonYoungestA,
-                FemalePersonYoungerB,
-                FemalePersonYoungC
+                _malePersonYoungestA,
+                _femalePersonYoungerB,
+                _femalePersonYoungC
             });
             var result = _store.RetrieveDateSorted(); //not crazy on this. Not as atomic as I would like to rely on another method in the class to testAdding. Normally test datastores by querying database, obviously not an option here 
             Assert.AreEqual(3, result.Count());
-            Assert.AreEqual(1, result.Count(x => x.LastName == MalePersonYoungestA.LastName));
-            Assert.AreEqual(1, result.Count(x => x.LastName == FemalePersonYoungerB.LastName));
-            Assert.AreEqual(1, result.Count(x => x.LastName == FemalePersonYoungC.LastName));
+            Assert.AreEqual(1, result.Count(x => x.LastName == _malePersonYoungestA.LastName));
+            Assert.AreEqual(1, result.Count(x => x.LastName == _femalePersonYoungerB.LastName));
+            Assert.AreEqual(1, result.Count(x => x.LastName == _femalePersonYoungC.LastName));
         }
 
         [Test]
-        private void TestBirthDateSorted()
+        public void TestBirthDateSorted()
         {
             _store.AddPeople(new List<Person>
             {
-                MalePersonYoungestA,
-                FemalePersonYoungerB,
-                FemalePersonYoungC
+                _malePersonYoungestA,
+                _femalePersonYoungerB,
+                _femalePersonYoungC
             });
             var result = _store.RetrieveDateSorted();
             var firstPerson = result.ElementAt(0);
-            Assert.AreEqual(MalePersonYoungestA.LastName, firstPerson.LastName);
+            Assert.AreEqual(_malePersonYoungestA.LastName, firstPerson.LastName);
             var secondPerson = result.ElementAt(1);
-            Assert.AreEqual(FemalePersonYoungerB.LastName, secondPerson.LastName);
+            Assert.AreEqual(_femalePersonYoungerB.LastName, secondPerson.LastName);
             var thirdPerson = result.ElementAt(2);
-            Assert.AreEqual(FemalePersonYoungC.LastName, thirdPerson.LastName);
+            Assert.AreEqual(_femalePersonYoungC.LastName, thirdPerson.LastName);
         }
 
         [Test]
-        private void TestGenderSorted()
+        public void TestGenderSorted()
         {
             _store.AddPeople(new List<Person>
             {
-                MalePersonYoungestA,
-                FemalePersonYoungerB,
-                FemalePersonYoungC
+                _malePersonYoungestA,
+                _femalePersonYoungerB,
+                _femalePersonYoungC
             });
             var result = _store.RetrieveGenderNameSorted();
             var firstPerson = result.ElementAt(0);
-            Assert.AreEqual(FemalePersonYoungerB.LastName, firstPerson.LastName);
+            Assert.AreEqual(_femalePersonYoungerB.LastName, firstPerson.LastName);
             var secondPerson = result.ElementAt(1);
-            Assert.AreEqual(FemalePersonYoungC.LastName, secondPerson.LastName);
+            Assert.AreEqual(_femalePersonYoungC.LastName, secondPerson.LastName);
             var thirdPerson = result.ElementAt(2);
-            Assert.AreEqual(MalePersonYoungestA.LastName, thirdPerson.LastName);
+            Assert.AreEqual(_malePersonYoungestA.LastName, thirdPerson.LastName);
         }
 
         [Test]
-        private void TestLastNameSorted()
+        public void TestLastNameSorted()
         {
             _store.AddPeople(new List<Person>
             {
-                MalePersonYoungestA,
-                FemalePersonYoungerB,
-                FemalePersonYoungC
+                _malePersonYoungestA,
+                _femalePersonYoungerB,
+                _femalePersonYoungC
             });
             var result = _store.RetrieveLastNameSorted();
             var firstPerson = result.ElementAt(0);
-            Assert.AreEqual(FemalePersonYoungC.LastName, firstPerson.LastName);
+            Assert.AreEqual(_femalePersonYoungC.LastName, firstPerson.LastName);
             var secondPerson = result.ElementAt(1);
-            Assert.AreEqual(FemalePersonYoungerB.LastName, secondPerson.LastName);
+            Assert.AreEqual(_femalePersonYoungerB.LastName, secondPerson.LastName);
             var thirdPerson = result.ElementAt(2);
-            Assert.AreEqual(MalePersonYoungestA.LastName, thirdPerson.LastName);
+            Assert.AreEqual(_malePersonYoungestA.LastName, thirdPerson.LastName);
         }
     }
 }

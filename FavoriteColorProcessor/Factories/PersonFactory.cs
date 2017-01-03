@@ -7,13 +7,18 @@ using FavoriteColorProcessor.Models;
 
 namespace FavoriteColorProcessor.Factories
 {
-    public class PersonFactory
+    public class PersonFactory : IPersonFactory
     {
-        private readonly DateFactory _dateFactory;
+        private readonly IDateFactory _dateFactory;
 
-        public PersonFactory(DateFactory dateFactory)
+        public PersonFactory(IDateFactory dateFactory)
         {
             _dateFactory = dateFactory;
+        }
+
+        public PersonFactory()
+        {
+            _dateFactory = new DateFactory();
         }
 
         private const int LastNameIndex = 0;
