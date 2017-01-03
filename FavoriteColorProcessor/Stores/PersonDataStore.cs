@@ -18,7 +18,6 @@ namespace FavoriteColorProcessor.Stores
 
         //caches to be flushed on adds
         private List<Person> _lastNameSorted; 
-
         private List<Person> _genderLastNameSorted;
         private List<Person> _dateOfBirthSorted;
 
@@ -69,7 +68,7 @@ namespace FavoriteColorProcessor.Stores
             if (_dateOfBirthSorted == null)
             {
                 InitializeSortedCache(ref _dateOfBirthSorted,
-                    (x, y) => (-1 * DateTime.Compare(x.DateOfBirth, y.DateOfBirth)));
+                    (x, y) => (DateTime.Compare(x.DateOfBirth, y.DateOfBirth)));
             }
             return _dateOfBirthSorted;
         }

@@ -10,11 +10,6 @@ namespace FavoriteColorProcessor.Factories
     {
 
         private const string DateFormat = "M/d/yyyy";
-        /// <summary>
-        /// Returns a DateTime object for a datestring. Throws an exception for improperly formated string. Assumption made as no details were provided about string format
-        /// </summary>
-        /// <param name="dateString">input string. Expected to be formatted as mm/dd/yyyy</param>
-        /// <returns>DateTimeObject</returns>
         public DateTime GetDate(string dateString)
         {
             try

@@ -27,12 +27,6 @@ namespace UnitTests.Factories
             _personFactory = new PersonFactory(_mockDateFactory.Object);
         }
 
-        private const int LastNameIndex = 0;
-        private const int FirstNameIndex = 1;
-        private const int GenderIndex = 2;
-        private const int FavoriteColorIndex = 3;
-        private const int DateOfBirthIndex = 4;
-
         [Test]
         [TestCase("Mark", "Markson", "Male", "Blue", "12/5/1995")]
         [TestCase("Shelly", "Jenson", "Femal", "Red", "12/5/1995")]

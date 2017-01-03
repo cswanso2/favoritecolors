@@ -72,11 +72,12 @@ namespace UnitTests.Stores
             });
             var result = _store.RetrieveDateSorted();
             var firstPerson = result.ElementAt(0);
-            Assert.AreEqual(_malePersonYoungestA.LastName, firstPerson.LastName);
+            Assert.AreEqual(_femalePersonYoungC.LastName, firstPerson.LastName);
             var secondPerson = result.ElementAt(1);
             Assert.AreEqual(_femalePersonYoungerB.LastName, secondPerson.LastName);
             var thirdPerson = result.ElementAt(2);
-            Assert.AreEqual(_femalePersonYoungC.LastName, thirdPerson.LastName);
+            Assert.AreEqual(_malePersonYoungestA.LastName, thirdPerson.LastName);
+
         }
 
         [Test]

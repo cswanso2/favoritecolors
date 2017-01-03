@@ -27,11 +27,6 @@ namespace FavoriteColorProcessor.Factories
         private const int FavoriteColorIndex = 3;
         private const int DateOfBirthIndex = 4;
 
-        /// <summary>
-        /// Used to create a person object. Takes in a string array. Assumed to be in the order of the constant ints laid out above.
-        /// </summary>
-        /// <param name="csvRow">Raw csv row of personal information</param>
-        /// <returns>Person object</returns>
         public Person CreatePerson(string[] csvRow)
         {
             var dateString = csvRow[DateOfBirthIndex];
