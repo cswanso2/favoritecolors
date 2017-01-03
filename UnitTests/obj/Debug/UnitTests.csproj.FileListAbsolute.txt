@@ -1,0 +1,15 @@
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\bin\Debug\Castle.Core.dll
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\bin\Debug\FavoriteColorProcessor.exe
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\bin\Debug\Moq.dll
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\bin\Debug\NLog.dll
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\bin\Debug\FavoriteColorProcessor.pdb
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\bin\Debug\Castle.Core.xml
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\bin\Debug\Moq.xml
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\bin\Debug\NLog.xml
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\UnitTests\obj\Debug\UnitTests.pdb

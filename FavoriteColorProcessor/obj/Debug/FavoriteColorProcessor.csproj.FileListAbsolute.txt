@@ -1,0 +1,10 @@
+c:\users\cswanson\documents\visual studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\bin\Debug\FavoriteColorProcessor.exe.config
+c:\users\cswanson\documents\visual studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\bin\Debug\FavoriteColorProcessor.exe
+c:\users\cswanson\documents\visual studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\bin\Debug\FavoriteColorProcessor.pdb
+c:\users\cswanson\documents\visual studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\obj\Debug\FavoriteColorProcessor.csprojResolveAssemblyReference.cache
+c:\users\cswanson\documents\visual studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\obj\Debug\FavoriteColorProcessor.exe
+c:\users\cswanson\documents\visual studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\obj\Debug\FavoriteColorProcessor.pdb
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\bin\Debug\CsvReader.dll
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\bin\Debug\NLog.dll
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\bin\Debug\CsvReader.xml
+C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\bin\Debug\NLog.xml
