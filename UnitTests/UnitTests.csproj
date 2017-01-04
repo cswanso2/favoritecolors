@@ -55,6 +55,7 @@
     <Compile Include="Factories\DateFactoryTests.cs" />
     <Compile Include="Factories\PersonFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sorters\SorterTests.cs" />
     <Compile Include="Stores\PersonDataStoreTests.cs" />
   </ItemGroup>
   <ItemGroup>

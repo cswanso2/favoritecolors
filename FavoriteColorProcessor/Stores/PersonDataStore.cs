@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FavoriteColorProcessor.Models;
+using FavoriteColorProcessor.Sorter;
 
 namespace FavoriteColorProcessor.Stores
 {
@@ -16,6 +17,10 @@ namespace FavoriteColorProcessor.Stores
     {
         private readonly List<Person> _store; //authoritative list of people. Unsorted
 
+        private readonly GenderSorter _genderSorter;
+        private readonly AgeSorter _ageSorter;
+        private readonly LastNameSorter _nameSorter;
+
         //caches to be flushed on adds
         private List<Person> _lastNameSorted; 
         private List<Person> _genderLastNameSorted;
@@ -26,6 +31,9 @@ namespace FavoriteColorProcessor.Stores
 
         public PersonDataStore()
         {
+            _genderSorter = new GenderSorter();
+            _ageSorter = new AgeSorter();
+            _nameSorter = new LastNameSorter();
             _store = new List<Person>();
         }
 
@@ -57,18 +65,13 @@ namespace FavoriteColorProcessor.Stores
             FlushCaches();
         }
 
-        private void InitializeSortedCache(ref List<Person> cache, Comparison<Person> comparison)
-        {
-            cache = _store.ToList(); //create copy of references so it can be sorted in different ways
-            cache.Sort(comparison);
-        }
 
         public List<Person> RetrieveDateSorted()
         {
             if (_dateOfBirthSorted == null)
             {
-                InitializeSortedCache(ref _dateOfBirthSorted,
-                    (x, y) => (DateTime.Compare(x.DateOfBirth, y.DateOfBirth)));
+                _dateOfBirthSorted = _store.ToList();
+                _dateOfBirthSorted = _ageSorter.Sort(_dateOfBirthSorted);
             }
             return _dateOfBirthSorted;
         }
@@ -77,11 +80,8 @@ namespace FavoriteColorProcessor.Stores
         {
             if (_genderLastNameSorted == null)
             {
-                InitializeSortedCache(ref _genderLastNameSorted, (x, y) => (
-                    x.Gender == y.Gender ? 
-                        string.CompareOrdinal(x.LastName, y.LastName)
-                        : string.CompareOrdinal(x.Gender, y.Gender)
-                    ));
+                _genderLastNameSorted = _store.ToList();
+                _genderLastNameSorted = _genderSorter.Sort(_genderLastNameSorted);
             }
             return _genderLastNameSorted;
         }
@@ -90,8 +90,8 @@ namespace FavoriteColorProcessor.Stores
         {
             if(_lastNameSorted == null)
             {
-                InitializeSortedCache(ref _lastNameSorted, (x, y) => (
-                    -1 * string.CompareOrdinal(x.LastName, y.LastName)));
+                _lastNameSorted = _store.ToList();
+                _lastNameSorted = _nameSorter.Sort(_lastNameSorted);
             }
             return _lastNameSorted;
         }

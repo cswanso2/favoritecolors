@@ -65,6 +65,10 @@
     <Compile Include="Parser\FavoriteColorFileParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sorter\AgeSorter.cs" />
+    <Compile Include="Sorter\GenderSorter.cs" />
+    <Compile Include="Sorter\LastNameSorter.cs" />
+    <Compile Include="Sorter\PersonSorter.cs" />
     <Compile Include="Stores\IPersonDataStore.cs" />
     <Compile Include="Stores\PersonDataStore.cs" />
   </ItemGroup>
