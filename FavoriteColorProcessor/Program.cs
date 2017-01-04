@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FavoriteColorProcessor.Factories;
+using FavoriteColorProcessor.Sorter;
 
 namespace FavoriteColorProcessor
 {
@@ -45,20 +46,19 @@ namespace FavoriteColorProcessor
 
         private static void OutputData(IEnumerable<Person> results)
         {
-            var store = new PersonDataStore();
+            PersonSorter sorter;
             var personFactory = new PersonFactory();
-            store.AddPeople(results);
             Console.WriteLine($"\nInput sort either {GenderSort}, {DateOfBirthSort}, or {LastNameSort}. gender is females before males, birthDate is ascending, and lastName is descending:");
             var sort = Console.ReadLine().ToLower();
-            List<Person> sorted;
             if (sort == GenderSort)
-                sorted = store.RetrieveGenderNameSorted();
+                sorter = new GenderSorter();           
             else if (sort == DateOfBirthSort)
-                sorted = store.RetrieveDateSorted();
+                sorter = new AgeSorter();
             else if (sort == LastNameSort)
-                sorted = store.RetrieveLastNameSorted();
+                sorter = new LastNameSorter();
             else
                 throw new FormatException("Invalid Sort");
+            var sorted = sorter.Sort(results.ToList());
             foreach(var person in sorted)
             {
                 Console.WriteLine(personFactory.CreateString(person));
