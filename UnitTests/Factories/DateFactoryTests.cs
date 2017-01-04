@@ -34,6 +34,19 @@ namespace UnitTests.Factories
         }
 
         [Test]
+        [TestCase(12, 21, 1992)]
+        [TestCase(5, 10, 2017)]
+        [TestCase(10, 1, 2013)]
+
+        public void CreatesString(int month, int day, int year)
+        {
+            var dateString = $"{month}/{day}/{year}";
+            var date = new DateTime(year, month, day);
+            var result = _dateFactory.GetString(date);
+            Assert.AreEqual(dateString, result);
+        }
+
+        [Test]
         [TestCase(12, -1, 1992)]
         [TestCase(-5, 10, 2017)]
         [TestCase(10, 1, -2013)]

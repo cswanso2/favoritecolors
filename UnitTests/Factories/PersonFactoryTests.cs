@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FavoriteColorProcessor.Factories;
+using FavoriteColorProcessor.Models;
 using Moq;
 using NUnit.Framework;
 
@@ -29,7 +31,7 @@ namespace UnitTests.Factories
 
         [Test]
         [TestCase("Mark", "Markson", "Male", "Blue", "12/5/1995")]
-        [TestCase("Shelly", "Jenson", "Femal", "Red", "12/5/1995")]
+        [TestCase("Shelly", "Jenson", "Female", "Red", "12/5/1995")]
         public void CreatePerson(string lastName, string firstName, string gender, string favoriteColor, string dateOfBirthString)
         {
             var stringArrayPerson = new string[] {lastName, firstName, gender, favoriteColor, dateOfBirthString};
@@ -41,7 +43,22 @@ namespace UnitTests.Factories
             Assert.AreEqual(person.DateOfBirth.Year, Year);
             Assert.AreEqual(person.DateOfBirth.Month, Month);
             Assert.AreEqual(person.DateOfBirth.Day, Day);
+        }
 
+        [Test]
+        [TestCase("Mark", "Markson", "Male", "Blue", "12/5/1995")]
+        [TestCase("Shelly", "Jenson", "Female", "Red", "12/5/1995")]
+        public void CreateString(string lastName, string firstName, string gender, string favoriteColor, string dateOfBirthString)
+        {
+            _mockDateFactory.Setup(x => x.GetString(It.IsAny<DateTime>())).Returns(dateOfBirthString);
+            var exepectedPersonString = $"{lastName},{firstName},{dateOfBirthString},{gender},{favoriteColor}";
+            var person = new Person { LastName = lastName,
+                FirstName = firstName,
+                Gender = gender,
+                FavoriteColor = favoriteColor,
+                DateOfBirth = DateTime.ParseExact(dateOfBirthString, "M/d/yyyy", CultureInfo.InvariantCulture) };
+            var resultPersonString = _personFactory.CreateString(person);
+            Assert.AreEqual(exepectedPersonString, resultPersonString);
         }
     }
 }
