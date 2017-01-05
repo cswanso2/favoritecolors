@@ -24,7 +24,7 @@ namespace FavoriteColorProcessor
                 try
                 {
                     var path = GetPath();
-                    var parser = new FavoriteColorFileParser();
+                    var parser = new FavoriteColorParser();
                     var results = parser.ProcessFile(path);
                     OutputData(results);
                 }

@@ -11,7 +11,7 @@ using NLog;
 
 namespace FavoriteColorProcessor.Parser
 {
-    public class FavoriteColorFileParser
+    public class FavoriteColorParser
     {
         private const string CommaDelimiter = ", ";
         private const string SpaceDelimiter = " ";
@@ -19,7 +19,7 @@ namespace FavoriteColorProcessor.Parser
 
         private readonly IPersonFactory _personFactory;
 
-        public FavoriteColorFileParser()
+        public FavoriteColorParser()
         {
             _personFactory = new PersonFactory();    
         }
@@ -29,7 +29,7 @@ namespace FavoriteColorProcessor.Parser
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        public IEnumerable<Person> ProcessFile(string path)
+        public virtual IEnumerable<Person> ProcessFile(string path)
         {
             List<Person> personList;
             using (TextFieldParser parser = new TextFieldParser(path))
@@ -61,7 +61,7 @@ namespace FavoriteColorProcessor.Parser
             return personList;
         }
 
-        public IEnumerable<Person> ProcessString(string personString)
+        public virtual IEnumerable<Person> ProcessString(string personString)
         {
             List<Person> personList;
             using (TextFieldParser parser = new TextFieldParser(new MemoryStream(Encoding.UTF8.GetBytes(personString ?? ""))))
