@@ -4,7 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 
-namespace FavoriteColorProcessor.Factories
+namespace BusinessLogic.Factories
 {
     public class DateFactory : IDateFactory
     {

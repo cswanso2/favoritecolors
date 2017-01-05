@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FavoriteColorProcessor.Factories
+namespace BusinessLogic.Factories
 {
     public interface IDateFactory
     {

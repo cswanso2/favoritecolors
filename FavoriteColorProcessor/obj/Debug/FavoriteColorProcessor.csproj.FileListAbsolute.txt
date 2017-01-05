@@ -8,3 +8,6 @@ C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\F
 C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\bin\Debug\NLog.dll
 C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\bin\Debug\CsvReader.xml
 C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\FavoriteColorProcessor\bin\Debug\NLog.xml
+C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\bin\Debug\FavoriteColorProcessor.exe.config
+C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\obj\Debug\FavoriteColorProcessor.exe
+C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\obj\Debug\FavoriteColorProcessor.pdb

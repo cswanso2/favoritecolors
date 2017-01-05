@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C7BCF095-FFF9-4036-BFDC-321FED9D7AF0}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{1068441E-469C-4FDE-AABD-8E1EC9AB808C}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FavoriteColorProcessor</RootNamespace>
-    <AssemblyName>FavoriteColorProcessor</AssemblyName>
+    <RootNamespace>BusinessLogic</RootNamespace>
+    <AssemblyName>BusinessLogic</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CsvReader, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CsvTools.1.0.12\lib\CsvReader.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.5.0.0-beta03\lib\net45\NLog.dll</HintPath>
@@ -57,18 +50,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Factories\DateFactory.cs" />
+    <Compile Include="Factories\IDateFactory.cs" />
+    <Compile Include="Factories\IPersonFactory.cs" />
+    <Compile Include="Factories\PersonFactory.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Parser\FavoriteColorParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sorter\AgeSorter.cs" />
+    <Compile Include="Sorter\GenderSorter.cs" />
+    <Compile Include="Sorter\LastNameSorter.cs" />
+    <Compile Include="Sorter\PersonSorter.cs" />
+    <Compile Include="Stores\IPersonDataStore.cs" />
+    <Compile Include="Stores\PersonDataStore.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
-      <Project>{1068441e-469c-4fde-aabd-8e1ec9ab808c}</Project>
-      <Name>BusinessLogic</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

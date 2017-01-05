@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FavoriteColorProcessor.Models;
+using BusinessLogic.Models;
 
-namespace FavoriteColorProcessor.Sorter
+namespace BusinessLogic.Sorter
 {
-    public class AgeSorter : PersonSorter
+    public class LastNameSorter : PersonSorter
     {
         protected override Comparison<Person> Comparison
         {
             get
             {
-                return (x, y) => (DateTime.Compare(x.DateOfBirth, y.DateOfBirth));
+                return (x, y) => (
+                    -1 * string.CompareOrdinal(x.LastName, y.LastName));
             }
         }
     }

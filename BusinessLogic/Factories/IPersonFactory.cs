@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FavoriteColorProcessor.Models;
+using BusinessLogic.Models;
 
-namespace FavoriteColorProcessor.Factories
+namespace BusinessLogic.Factories
 {
     public interface IPersonFactory
     {

@@ -4,10 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FavoriteColorProcessor.Models;
-using FavoriteColorProcessor.Sorter;
+using BusinessLogic.Models;
+using BusinessLogic.Sorter;
 
-namespace FavoriteColorProcessor.Stores
+namespace BusinessLogic.Stores
 {
     /// <summary>
     /// Assumes low amount of writes, and high amount of retrievals.

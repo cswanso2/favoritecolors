@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FavoriteColorProcessor.Models;
+using BusinessLogic.Models;
 
-namespace FavoriteColorProcessor.Sorter
+namespace BusinessLogic.Sorter
 {
     public abstract class PersonSorter
     {

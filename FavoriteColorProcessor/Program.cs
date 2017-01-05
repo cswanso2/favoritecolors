@@ -1,13 +1,13 @@
-﻿using FavoriteColorProcessor.Models;
-using FavoriteColorProcessor.Parser;
-using FavoriteColorProcessor.Stores;
+﻿using BusinessLogic.Models;
+using BusinessLogic.Parser;
+using BusinessLogic.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FavoriteColorProcessor.Factories;
-using FavoriteColorProcessor.Sorter;
+using BusinessLogic.Factories;
+using BusinessLogic.Sorter;
 
 namespace FavoriteColorProcessor
 {

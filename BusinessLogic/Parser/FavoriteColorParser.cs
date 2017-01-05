@@ -4,12 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FavoriteColorProcessor.Factories;
-using FavoriteColorProcessor.Models;
+using BusinessLogic.Factories;
+using BusinessLogic.Models;
 using Microsoft.VisualBasic.FileIO;
 using NLog;
 
-namespace FavoriteColorProcessor.Parser
+namespace BusinessLogic.Parser
 {
     public class FavoriteColorParser
     {
