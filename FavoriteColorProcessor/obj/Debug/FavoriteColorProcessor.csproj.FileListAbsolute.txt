@@ -11,3 +11,12 @@ C:\Users\cswanson\Documents\Visual Studio 2015\Projects\FavoriteColorProcessor\F
 C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\bin\Debug\FavoriteColorProcessor.exe.config
 C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\obj\Debug\FavoriteColorProcessor.exe
 C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\obj\Debug\FavoriteColorProcessor.pdb
+C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\bin\Debug\FavoriteColorProcessor.exe
+C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\bin\Debug\FavoriteColorProcessor.pdb
+C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\bin\Debug\BusinessLogic.dll
+C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\bin\Debug\CsvReader.dll
+C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\bin\Debug\NLog.dll
+C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\bin\Debug\BusinessLogic.pdb
+C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\bin\Debug\CsvReader.xml
+C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\bin\Debug\NLog.xml
+C:\Users\charl_000\Documents\Visual Studio 2015\Projects\gauranteedrate\FavoriteColorProcessor\obj\Debug\FavoriteColorProcessor.csprojResolveAssemblyReference.cache
